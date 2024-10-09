@@ -27,6 +27,7 @@ jobs:
     - name: Build
       run: |
         npm install
+        npm install -g typescript
         npm run build
         ls -la
     - uses: actions/configure-pages@v4
