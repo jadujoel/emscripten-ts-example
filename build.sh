@@ -1,7 +1,7 @@
 #!/bin/bash
 
 set -e
-echo building main.wasm
+echo building lib.wasm
 
 emcc src/lib.c \
     -Oz \

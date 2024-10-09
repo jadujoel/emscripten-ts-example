@@ -30,7 +30,7 @@ export async function build() {
   })
 
   console.log('copying static files')
-  await fs.copyFile('./src/add.wasm', 'dist/add.wasm')
+  await fs.copyFile('./src/lib.wasm', 'dist/lib.wasm')
   await fs.copyFile('./src/index.html', 'dist/index.html')
 }
 
