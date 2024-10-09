@@ -9,7 +9,7 @@ import esbuild from 'esbuild'
  **/
 function getContentType(extname) {
   switch (extname) {
-    case ".ts":
+    case ".js":
       return "text/javascript";
     case ".wasm":
       return "application/wasm";
@@ -40,9 +40,9 @@ const server = http.createServer(async (req, res) => {
     return;
   }
 
-  if (extname === ".ts") {
+  if (extname === ".js") {
     esbuild.build({
-      entryPoints: [filePath],
+      entryPoints: [filePath.replace('.js', '.ts')],
       bundle: true,
       minify: true,
       sourcemap: 'inline',
@@ -50,7 +50,6 @@ const server = http.createServer(async (req, res) => {
       write: false,
       // make into es module
       format: 'esm',
-
     }).then((result) => {
       const { outputFiles } = result;
       const [{ text }] = outputFiles;

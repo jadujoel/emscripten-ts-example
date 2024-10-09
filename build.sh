@@ -1,5 +1,7 @@
 #!/bin/bash
 
+echo building add.wasm
+
 emcc src/add.c \
     -Oz \
     -s WASM=1 \
