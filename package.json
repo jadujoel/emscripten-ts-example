@@ -1,0 +1,17 @@
+{
+  "name": "emscripten-ts-example",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "bash build.sh",
+    "serve": "node serve.mjs"
+  },
+  "keywords": [],
+  "author": "joel.lof@icloud.com",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "22.7.5",
+    "esbuild": "0.24.0"
+  }
+}
