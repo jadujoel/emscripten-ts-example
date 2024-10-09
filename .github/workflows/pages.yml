@@ -12,29 +12,6 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
-
-    steps:
-    - name: Checkout code
-      uses: actions/checkout@v4
-
-    - name: Setup Emscripten SDK
-      uses: trzeci/emscripten@v2.0.17
-
-    - name: Build
-      run: |
-        bash build.sh
-
-    - name: Upload To Github Pages
-      uses: peaceiris/actions-gh-pages@v3
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./dist
-        user_name: 'GitHub Actions'
-        user_email: '
-
-jobs:
   deploy:
     runs-on: ubuntu-latest
     environment:
