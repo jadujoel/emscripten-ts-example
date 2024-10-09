@@ -1,5 +1,6 @@
 #!/bin/bash
 
+set -e
 echo building add.wasm
 
 emcc src/add.c \

@@ -34,4 +34,8 @@ export async function build() {
   await fs.copyFile('./src/index.html', 'dist/index.html')
 }
 
-await build()
+build().then(() => {
+  console.log('Build done')
+}).catch(() => {
+  console.error('Build failed')
+})
