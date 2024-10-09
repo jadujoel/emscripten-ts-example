@@ -28,6 +28,7 @@ jobs:
       run: |
         npm install
         bash build.sh
+        ls -la
     - uses: actions/configure-pages@v4
     - uses: actions/upload-pages-artifact@v3
       with:

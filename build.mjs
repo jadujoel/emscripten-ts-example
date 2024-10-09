@@ -6,6 +6,7 @@ import * as cp from 'node:child_process'
 function exec(command) {
   return new Promise((resolve, reject) => {
     cp.exec(command, (err, stdout, stderr) => {
+      console.log(stderr)
       if (err) {
         reject(err)
         return
