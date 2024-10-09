@@ -1,9 +1,9 @@
 #!/bin/bash
 
 set -e
-echo building add.wasm
+echo building main.wasm
 
-emcc src/add.c \
+emcc src/lib.c \
     -Oz \
     -s WASM=1 \
     -s ENVIRONMENT='web' \
@@ -11,4 +11,5 @@ emcc src/add.c \
     -s EXPORTED_FUNCTIONS="['_add']" \
     -s NO_FILESYSTEM=1 \
     -s ALLOW_MEMORY_GROWTH=0 \
-    -o src/add.mjs
+    -o src/lib.mjs \
+    --emit-tsd lib.d.ts
